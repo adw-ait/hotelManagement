@@ -24,7 +24,7 @@
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelmanagement", "root", "1234");
         Statement st=conn.createStatement();
 
-        int i=st.executeUpdate("insert into employee(name,age,gender,job,salary,phone,aadhar,email)values('"+name+"','"+age+"','"+gender+"','"+job+"','"+salary+"',',"+phone+"','"+aadhar+"','"+email+"')");
+        int i=st.executeUpdate("insert into employee(name,age,gender,job,salary,phone,aadhar,email)values('"+name+"','"+age+"','"+gender+"','"+job+"','"+salary+"','"+phone+"','"+aadhar+"','"+email+"')");
         out.println("Employee inserted!");
         response.sendRedirect("AddEmployee.jsp");
     }

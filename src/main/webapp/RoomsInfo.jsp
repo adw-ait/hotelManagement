@@ -71,11 +71,12 @@
             <div class="card-content white-text">
                 <p style="
             font-size: 20px;
-            font-weight: bold;" class="card-title"><%=resultSet.getString("roomNO") %></p>
+            font-weight: bold;" class="card-title"><%=resultSet.getString("roomNo") %></p>
                 <p>Available : <%=resultSet.getString("available") %></p>
                 <p>Clean Status : <%=resultSet.getString("clean") %></p>
                 <p>Price : <%=resultSet.getString("price") %></p>
                 <p>BedType : <%=resultSet.getString("bedType") %></p>
+                <p>Alloted to : <%=resultSet.getString("allotedTo") %></p>
             </div>
         </div>
     </div>

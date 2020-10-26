@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Adwait001
-  Date: 20-10-2020
-  Time: 09:34 PM
+  Date: 25-10-2020
+  Time: 10:48 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@page import="java.sql.DriverManager"%>
@@ -28,13 +28,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Employee Information</title>
+    <title>Customer Information</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+
         html{
             margin: 50px;
         }
@@ -51,17 +55,32 @@
             font-weight: 500;
         }
 
+        .delete{
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .delete:active{
+            background: none;
+        }
+        .delete:visited{
+            background: none;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="row">
+
+
+<div class="row" >
     <%
         try{
             connection = DriverManager.getConnection(connectionUrl+database, userid, password);
             statement=connection.createStatement();
-            String sql ="select * from employee";
+            String sql ="select * from customer";
             resultSet = statement.executeQuery(sql);
+            int i = 0;
             while(resultSet.next()){
     %>
 
@@ -71,22 +90,22 @@
                 <span style="text-transform: capitalize;
             font-size: 20px;
             font-weight: bold;" class="card-title"><%=resultSet.getString("name") %></span>
-                <p>Age : <%=resultSet.getString("age") %></p>
+                <p>ID : <%=resultSet.getString("id") %></p>
+                <p>Phone : <%=resultSet.getString("number") %></p>
                 <p>Gender : <%=resultSet.getString("gender") %></p>
-                <p>Job : <%=resultSet.getString("job") %></p>
-                <p>Salary : <%=resultSet.getString("salary") %></p>
-                <p>Phone : <%=resultSet.getString("phone") %></p>
-                <p>Aadhar : <%=resultSet.getString("aadhar") %></p>
-                <p>E-mail : <%=resultSet.getString("email") %></p>
+                <p>Country : <%=resultSet.getString("country") %></p>
+                <p>Room No : <%=resultSet.getString("room_number") %></p>
+                <p>deposit : <%=resultSet.getString("deposit") %></p>
+                <div style="float: right">
+                    <button class="delete" type="button" id="<%=resultSet.getString("room_number") %>"><i class="material-icons">delete</i></button>
+                </div>
+                <br/>
             </div>
-            <div style="float: right">
-                <button class="delete" type="button" id="<%=resultSet.getString("name") %>"><i class="material-icons">delete</i></button>
-            </div>
-            <br/>
         </div>
     </div>
 
     <%
+                i++;
             }
             connection.close();
         } catch (Exception e) {
@@ -95,8 +114,17 @@
     %>
 </div>
 
+
+
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        $('.modal').modal({'opacity' : 0});
+        $('select').formSelect();
+    });
+</script>
 
 <script>
     $(document).ready(function (){
@@ -105,7 +133,7 @@
             if (response == true) {
                 var id = +this.id;
                 $.ajax({
-                    url: "deleteEmp.jsp",
+                    url: "deleteCust.jsp",
                     type: "post",
                     data: {
                         id: id,
@@ -118,3 +146,4 @@
         });
     });
 </script>
+

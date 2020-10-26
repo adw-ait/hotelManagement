@@ -76,15 +76,25 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
-            <li class="tab col s3"><a href="#test1">Add Employees</a></li>
-            <li class="tab col s3"><a href="#test2">Add Rooms</a></li>
+            <li class="tab col s3"><a href="#addEmp">Add Employees</a></li>
+            <li class="tab col s3"><a href="#addRoom">Add Rooms</a></li>
+            <li class="tab col s3"><a href="#empInfo">Employee Info</a></li>
+            <li class="tab col s3"><a href="#roomInfo">Rooms Info</a></li>
         </ul>
     </div>
-    <div id="test1" class="col s12">
+    <div id="addEmp" class="col s12">
         <iframe src="AddEmployee.jsp" width="100%" height="100%" style="border: none" scrolling="no"></iframe>
     </div>
-    <div id="test2" class="col s12">
+    <div id="addRoom" class="col s12">
         <iframe src="AddRooms.jsp" width="100%" height="100%" style="border: none"></iframe>
+    </div>
+
+    <div id="empInfo" class="col s12">
+        <iframe src="EmployeeInfo.jsp" width="100%" height="100%" style="border: none" scrolling="no"></iframe>
+    </div>
+
+    <div id="roomInfo" class="col s12">
+        <iframe src="RoomsInfo.jsp" width="100%" height="100%" style="border: none" scrolling="no"></iframe>
     </div>
 </div>
 

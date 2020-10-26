@@ -22,7 +22,7 @@
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelmanagement", "root", "1234");
         Statement st=conn.createStatement();
 
-        int i=st.executeUpdate("insert into rooms(roomNo,available,clean,price,bedType)values('"+roomNo+"','"+available+"','"+clean+"','"+price+"',',"+bedType+"')");
+        int i=st.executeUpdate("insert into rooms(roomNo,available,clean,price,bedType)values('"+roomNo+"','"+available+"','"+clean+"','"+price+"','"+bedType+"')");
         out.println("Room added");
         response.sendRedirect("AddRooms.jsp");
     }

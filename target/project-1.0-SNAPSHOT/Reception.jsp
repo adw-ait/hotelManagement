@@ -65,19 +65,19 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
-            <li class="tab col s3"><a href="#addCust">Add Customer</a></li>
-            <li class="tab col s3"><a href="#roomInfo">Room Info</a></li>
-            <li class="tab col s3"><a href="#empInfo">Employee Info</a></li>
+            <li class="tab col s4"><a href="#addCust">Add Customer</a></li>
+            <li class="tab col s4"><a href="#custInfo">Customer Info</a></li>
+            <li class="tab col s4"><a href="#roomInfo">Room Info</a></li>
         </ul>
     </div>
     <div id="addCust" class="col s12">
-
+        <iframe src="AddCustomer.jsp" width="100%" height="100%" style="border: none"></iframe>
+    </div>
+    <div id="custInfo" class="col s12">
+        <iframe src="CustomerInfo.jsp" width="100%" height="100%" style="border: none"></iframe>
     </div>
     <div id="roomInfo" class="col s12">
         <iframe src="RoomsInfo.jsp" width="100%" height="100%" style="border: none"></iframe>
-    </div>
-    <div id="empInfo" class="col s12">
-        <iframe src="EmployeeInfo.jsp" width="100%" height="100%" style="border: none"></iframe>
     </div>
 </div>
 </body>
